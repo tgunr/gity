@@ -20,7 +20,13 @@
 
 @implementation GTConfigView
 
-- (void) awakeFromNib {}
+- (void) awakeFromNib {
+	if(!setTableDelegates) {
+		[tableView setDelegate:self];
+		[tableView setDataSource:self];
+		setTableDelegates=true;
+	}
+}
 
 - (void) lazyInitWithGD:(GittyDocument *) _gd {
 	[super lazyInitWithGD:_gd];
@@ -61,7 +67,8 @@
 }
 
 - (void) addItem {
-	[configs addObject:[NSMutableArray arrayWithObjects:@"",@"",nil]];
+	//	[configs addObject:[NSMutableArray arrayWithObjects:@"",@"",nil]];
+	[configs addObject:[[NSMutableArray alloc] initWithObjects:@"",@"",nil]];
 	[tableView reloadData];
 	NSIndexSet * indxs = [[NSIndexSet alloc] initWithIndex:[tableView numberOfRows]-1];
 	[tableView selectRowIndexes:indxs byExtendingSelection:false];
@@ -87,12 +94,20 @@
 }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *) table {
-	return [configs count];
+	NSUInteger theCount = [configs count];
+	return theCount;
 }
 
 - (id) tableView:(NSTableView *) table objectValueForTableColumn:(NSTableColumn *) column row:(NSInteger) index {
-	if([[column identifier] isEqual:@"key"]) return [(NSMutableArray*)[configs objectAtIndex:index] objectAtIndex:0];
-	else return [(NSMutableArray*)[configs objectAtIndex:index] objectAtIndex:1];
+	//	NSLog(@"col0:%@\n", [[configs objectAtIndex:index] objectAtIndex:0]);
+	//	NSLog(@"col1:%@\n", [[configs objectAtIndex:index] objectAtIndex:1]);
+	NSUInteger theCount = [configs count];
+	//	NSLog(@"index=%d count=%d", index, theCount);
+	
+	if([[column identifier] isEqual:@"key"]) 
+		return [(NSMutableArray*)[[configs objectAtIndex:index] objectAtIndex:0] retain];
+	else 
+		return [(NSMutableArray*)[[configs objectAtIndex:index] objectAtIndex:1] retain];
 	return nil;
 }
 
@@ -129,20 +144,12 @@
 - (void) updateWithGlobalConfig {
 	isGlobalConfig = true;
 	configs = [[NSMutableArray arrayWithArray:[gitd globalConfigs]] retain];
-	if(!setTableDelegates) {
-		[tableView setDelegate:self];
-		[tableView setDataSource:self];
-	}
 	[tableView reloadData];
 }
 
 - (void) update {
 	isGlobalConfig=false;
 	configs=[[NSMutableArray arrayWithArray:[gitd configs]] retain];
-	if(!setTableDelegates) {
-		[tableView setDelegate:self];
-		[tableView setDataSource:self];
-	}
 	[tableView reloadData];
 }
 
@@ -155,6 +162,8 @@
 	rightView=nil;
 	isGlobalConfig=false;
 	setTableDelegates=false;
+	[tableView setDelegate:nil];
+	[tableView setDataSource:nil];
 	[super dealloc];
 }
 

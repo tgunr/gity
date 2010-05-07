@@ -15,3 +15,4 @@ gitty.xcodeproj/aaronsmith.pbxuser
 frameworks/gdkit/build/
 frameworks/gdkit/build/gdkit.build/
 python/*.pyc
+plain/env

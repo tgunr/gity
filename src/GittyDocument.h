@@ -95,6 +95,7 @@
 	GTSoundController * sounds;
 	GTOperationsController * operations;
 	GTContextMenuController * contextMenus;
+	NSUserDefaults * defaults;
 }
 
 #pragma mark properties
@@ -129,6 +130,7 @@
 @property (readonly,nonatomic) GTNuRemoteTrackBranch * newTrackBranch;
 @property (readonly,nonatomic) GTSoundController * sounds;
 @property (readonly,nonatomic) GTNewSubmoduleController * newSubmodule;
+@property (assign, getter=getGlobalDefaults, setter=setGlobalDefaults) NSUserDefaults * defaults;
 
 - (id) init;
 - (void) adjustMinWindowSize;

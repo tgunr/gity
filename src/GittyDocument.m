@@ -23,7 +23,6 @@ static GTDocumentController * doc;
 static GTModalController * modals;
 static NSFileManager * fileManager;
 static NSNotificationCenter * center;
-static NSUserDefaults * defaults;
 static NSWindow * lastMainWindow;
 
 @implementation GittyDocument
@@ -58,6 +57,16 @@ static NSWindow * lastMainWindow;
 @synthesize newSubmodule;
 @synthesize commitAfterAdd;
 @synthesize diffView;
+
+@dynamic defaults;
+
+- (NSUserDefaults *) getGlobalDefaults {
+	return [[GTDocumentController sharedInstance] defaults];
+}
+
+- (void) setGlobalDefaults:(NSUserDefaults *) newDefaults {
+	[[GTDocumentController sharedInstance] setDefaults: newDefaults];
+}
 
 #pragma mark initializations
 - (void) awakeFromNib {

@@ -353,6 +353,8 @@
 		07FBCAD210B7E9FB00D4E829 /* UnusedInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FBCAD110B7E9FB00D4E829 /* UnusedInterface.xib */; };
 		1DDD582C0DA1D0D100B32029 /* GittyDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58280DA1D0D100B32029 /* GittyDocument.xib */; };
 		1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD582A0DA1D0D100B32029 /* MainMenu.xib */; };
+		75B9B1DA119473AF00E90AE6 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B9B1D8119473AF00E90AE6 /* Preferences.xib */; };
+		75B9B1ED119474EB00E90AE6 /* GTPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B9B1EB119474EB00E90AE6 /* GTPreferencesController.m */; };
 		8D15AC2C0486D014006FF6A4 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.html */; };
 		8D15AC310486D014006FF6A4 /* GittyDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* GittyDocument.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -971,6 +973,9 @@
 		2A37F4BAFDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		75B9B1D9119473AF00E90AE6 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
+		75B9B1EB119474EB00E90AE6 /* GTPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTPreferencesController.m; path = src/GTPreferencesController.m; sourceTree = "<group>"; };
+		75B9B1EC119474EB00E90AE6 /* GTPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTPreferencesController.h; path = src/GTPreferencesController.h; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* Gity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1324,6 +1329,7 @@
 				07DA896810A7803800864A22 /* GTOpUpdateSubs.h */,
 				07CDDE83109E75DA00B0A99A /* GTOpWithCallback.h */,
 				072CDB88108EF8E4009064CF /* GTOpWriteConfig.h */,
+				75B9B1EC119474EB00E90AE6 /* GTPreferencesController.h */,
 				07A03F3E106DD0C300B21AB9 /* GTPythonScripts.h */,
 				07DA0F6F10BF255200F7170D /* GTRegistrationController.h */,
 				07D2342F10ABB86F007BB68A /* GTRemindQuitFileMerge.h */,
@@ -1719,6 +1725,7 @@
 				07D04005109CCBE4005D5ED4 /* GTSoundController.m */,
 				07F484DA1069FD5D0059F611 /* GTStatusController.m */,
 				07C96CCA1073101C00E7F7DD /* GTUnknownErrorController.m */,
+				75B9B1EB119474EB00E90AE6 /* GTPreferencesController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -1946,6 +1953,7 @@
 		75B9B17D11946B2900E90AE6 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				75B9B1D8119473AF00E90AE6 /* Preferences.xib */,
 				1DDD582A0DA1D0D100B32029 /* MainMenu.xib */,
 				077147C41060BE3500D6230C /* NewBranch.xib */,
 				07E621F9108BEC4600963F2A /* NewRemote.xib */,
@@ -2161,6 +2169,7 @@
 				0768A1E110F3141900951EB1 /* stateDropDownNormal.png in Resources */,
 				0768A1E210F3141900951EB1 /* stateDropDownOver.png in Resources */,
 				07DEF6E61101809D006E8A54 /* Giveaway.xib in Resources */,
+				75B9B1DA119473AF00E90AE6 /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2557,6 +2566,7 @@
 				07DEF7A11104FB4B006E8A54 /* GTAdvancedDiffView.m in Sources */,
 				07DEF7A41104FBB2006E8A54 /* GTTileView.m in Sources */,
 				07DEF7C41104FFC0006E8A54 /* GTAdvancedDiffTileView.m in Sources */,
+				75B9B1ED119474EB00E90AE6 /* GTPreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2744,6 +2754,14 @@
 				2A37F4BAFDCFA73011CA2CEA /* English */,
 			);
 			name = Credits.html;
+			sourceTree = "<group>";
+		};
+		75B9B1D8119473AF00E90AE6 /* Preferences.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75B9B1D9119473AF00E90AE6 /* English */,
+			);
+			name = Preferences.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

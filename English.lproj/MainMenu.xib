@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
 	<data>
-		<int key="IBDocument.SystemTarget">1050</int>
-		<string key="IBDocument.SystemVersion">10C540</string>
-		<string key="IBDocument.InterfaceBuilderVersion">740</string>
-		<string key="IBDocument.AppKitVersion">1038.25</string>
-		<string key="IBDocument.HIToolboxVersion">458.00</string>
+		<int key="IBDocument.SystemTarget">1060</int>
+		<string key="IBDocument.SystemVersion">10D578</string>
+		<string key="IBDocument.InterfaceBuilderVersion">762</string>
+		<string key="IBDocument.AppKitVersion">1038.29</string>
+		<string key="IBDocument.HIToolboxVersion">460.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">740</string>
+			<string key="NS.object.0">762</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="29"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -79,6 +78,25 @@
 									<reference key="NSMixedImage" ref="310636482"/>
 								</object>
 								<object class="NSMenuItem" id="523104915">
+									<reference key="NSMenu" ref="110575045"/>
+									<bool key="NSIsDisabled">YES</bool>
+									<bool key="NSIsSeparator">YES</bool>
+									<string key="NSTitle"/>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="1033313550"/>
+									<reference key="NSMixedImage" ref="310636482"/>
+								</object>
+								<object class="NSMenuItem" id="600980729">
+									<reference key="NSMenu" ref="110575045"/>
+									<string key="NSTitle">Preferences…</string>
+									<string key="NSKeyEquiv">,</string>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="1033313550"/>
+									<reference key="NSMixedImage" ref="310636482"/>
+								</object>
+								<object class="NSMenuItem" id="543154421">
 									<reference key="NSMenu" ref="110575045"/>
 									<bool key="NSIsDisabled">YES</bool>
 									<bool key="NSIsSeparator">YES</bool>
@@ -2323,6 +2341,14 @@
 					</object>
 					<int key="connectionID">898</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">openPreferences:</string>
+						<reference key="source" ref="46756134"/>
+						<reference key="destination" ref="600980729"/>
+					</object>
+					<int key="connectionID">920</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -2464,6 +2490,8 @@
 							<reference ref="876341221"/>
 							<reference ref="176322178"/>
 							<reference ref="903795876"/>
+							<reference ref="600980729"/>
+							<reference ref="543154421"/>
 						</object>
 						<reference key="parent" ref="694149608"/>
 					</object>
@@ -3450,6 +3478,16 @@
 						<reference key="object" ref="97715961"/>
 						<reference key="parent" ref="1035495002"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">905</int>
+						<reference key="object" ref="600980729"/>
+						<reference key="parent" ref="110575045"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">904</int>
+						<reference key="object" ref="543154421"/>
+						<reference key="parent" ref="110575045"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -3701,6 +3739,8 @@
 					<string>879.IBPluginDependency</string>
 					<string>885.IBPluginDependency</string>
 					<string>893.IBPluginDependency</string>
+					<string>904.IBPluginDependency</string>
+					<string>905.IBPluginDependency</string>
 					<string>92.IBPluginDependency</string>
 					<string>92.ImportedFromIB2</string>
 				</object>
@@ -3797,7 +3837,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{525, 802}, {197, 73}}</string>
-					<string>{{417, 763}, {509, 20}}</string>
+					<string>{{395, 1364}, {509, 20}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{74, 862}</string>
@@ -3847,7 +3887,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{583, 442}, {309, 333}}</string>
+					<string>{{407, 1001}, {309, 363}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{23, 794}, {245, 183}}</string>
@@ -3952,6 +3992,8 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 				</object>
 			</object>
@@ -3971,7 +4013,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">900</int>
+			<int key="maxID">921</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4005,7 +4047,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">GTAdvancedDiffView.h</string>
+						<string key="minorKey">src/GTAdvancedDiffView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -4231,6 +4273,7 @@
 							<string>launchGitManPages:</string>
 							<string>mutePopSounds:</string>
 							<string>openDocument:</string>
+							<string>openPreferences:</string>
 							<string>resetPrompts:</string>
 							<string>showRegistration:</string>
 							<string>toggleCheckForUpdates:</string>
@@ -4238,6 +4281,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -4517,6 +4561,72 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
+					<string key="className">GTPreferencesController</string>
+					<string key="superclassName">NSWindowController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>deminiaturize:</string>
+							<string>getComparePath:</string>
+							<string>getProjectPath:</string>
+							<string>makeKeyAndOrderFront:</string>
+							<string>miniaturize:</string>
+							<string>orderBack:</string>
+							<string>orderFront:</string>
+							<string>orderOut:</string>
+							<string>performClose:</string>
+							<string>performMiniaturize:</string>
+							<string>performZoom:</string>
+							<string>print:</string>
+							<string>runToolbarCustomizationPalette:</string>
+							<string>toggleToolbarShown:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>comparePathControl</string>
+							<string>comparePathExplain</string>
+							<string>projectPathControl</string>
+							<string>projectPathExplain</string>
+							<string>setComparePathButton</string>
+							<string>setProjectPathButton</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSPathControl</string>
+							<string>NSTextField</string>
+							<string>NSPathControl</string>
+							<string>NSTextField</string>
+							<string>NSButton</string>
+							<string>NSButton</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">src/GTPreferencesController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">GTRemoteView</string>
 					<string key="superclassName">GTGittyView</string>
 					<object class="NSMutableDictionary" key="outlets">
@@ -4768,7 +4878,7 @@
 					<string key="superclassName">GTGittyView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">GTTileView.h</string>
+						<string key="minorKey">src/GTTileView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -5572,6 +5682,14 @@
 					<reference key="sourceIdentifier" ref="131197960"/>
 				</object>
 				<object class="IBPartialClassDescription">
+					<string key="className">NSPathControl</string>
+					<string key="superclassName">NSControl</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSPathControl.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">NSPopUpButton</string>
 					<string key="superclassName">NSButton</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -5702,13 +5820,6 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">GDKit.framework/Headers/NSView+Additions.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
 					<string key="className">NSWindow</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
@@ -5735,6 +5846,18 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">BWToolkitFramework.framework/Headers/NSWindow+BWAdditions.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSWindowController</string>
+					<string key="superclassName">NSResponder</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">showWindow:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSWindowController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -5792,9 +5915,10 @@
 			</object>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
+		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
-			<integer value="1050" key="NS.object.0"/>
+			<integer value="1060" key="NS.object.0"/>
 		</object>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.InterfaceBuilder3</string>
@@ -5803,5 +5927,18 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<string key="IBDocument.LastKnownRelativeProjectPath">../gitty.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<bool key="EncodedWithXMLCoder">YES</bool>
+			<object class="NSArray" key="dict.sortedKeys">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>NSMenuCheckmark</string>
+				<string>NSMenuMixedState</string>
+			</object>
+			<object class="NSMutableArray" key="dict.values">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>{9, 8}</string>
+				<string>{7, 2}</string>
+			</object>
+		</object>
 	</data>
 </archive>

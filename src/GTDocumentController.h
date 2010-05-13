@@ -30,16 +30,22 @@
 #import "GTCLIProxy.h"
 #import "GTRegistrationController.h"
 
+@class GTPreferencesController;
+
 @interface GTDocumentController : NSDocumentController {
 	IBOutlet SUUpdater * sparkle;
 	GTGitCommandExecutor * git;
 	GTOperationsController * operations;
 	GTCLIProxy * cliproxy;
 	GTRegistrationController * registration;
+	GTPreferencesController * prefController;
+	NSUserDefaults * defaults;
 }
 
+@property (assign) NSUserDefaults * defaults;
 @property (readonly,nonatomic) GTRegistrationController * registration;
 
++ (GTDocumentController *) sharedInstance;
 + (NSString *) gityVersion;
 - (void) persistWindowStates;
 - (void) installTextmateBundle:(id) sender;
@@ -60,5 +66,5 @@
 - (void) updateGityVersion;
 - (IBAction) cloneRepo:(id) sender;
 - (IBAction) initNewRepo:(id) sender;
-
+- (IBAction) openPreferences:(id) sender;
 @end

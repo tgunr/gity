@@ -17,14 +17,16 @@
 
 #import "GTDocumentController.h"
 #import "GittyDocument.h"
+#import "GTPreferencesController.h"
 #import <GDKit/GDKit.h>
 
+static GTDocumentController * inst;
 static GTModalController * modals;
-static NSUserDefaults * defaults;
 static NSString * gityVersion;
 
 @implementation GTDocumentController
 @synthesize registration;
+@synthesize defaults;
 
 #pragma mark initializers
 + (void) initialize {
@@ -38,8 +40,10 @@ static NSString * gityVersion;
 		cliproxy=[[GTCLIProxy alloc] init];
 		registration=[[GTRegistrationController alloc] init];
 		[GTPythonScripts initMainBundle];
-		if(defaults is nil) defaults=[NSUserDefaults standardUserDefaults];
-		if(modals is nil) modals=[GTModalController sharedInstance];
+		if(defaults is nil) 
+			defaults=[NSUserDefaults standardUserDefaults];
+		if(modals is nil) 
+			modals=[GTModalController sharedInstance];
 	}
 	return self;
 }
@@ -47,6 +51,15 @@ static NSString * gityVersion;
 #pragma mark version info
 + (NSString *) gityVersion {
 	return gityVersion;
+}
+
++ (GTDocumentController *) sharedInstance {
+	@synchronized(self) {
+		if(!inst) {
+			inst=[[self alloc] init];
+		}
+	}
+	return inst;
 }
 
 #pragma mark window helpers
@@ -260,6 +273,10 @@ static NSString * gityVersion;
 	return false;
 }
 
+- (void) awakeFromNib {
+	GittyDocument * gd = [self currentDocument];
+}
+
 - (void) openDocument:(id)sender {
 	NSOpenPanel * op = [[NSOpenPanel alloc] init];
 	[op setCanChooseFiles:false];
@@ -307,6 +324,17 @@ cleanup:
 
 - (IBAction) cloneRepo:(id) sender {
 	[modals cloneRepo];
+}
+
+- (IBAction) openPreferences:(id) sender {
+	if (prefController == NULL)
+		prefController = [[GTPreferencesController alloc] initWithWindowNibName:@"Preferences"];
+	
+	[prefController showWindow:self];
+//    if (![NSBundle loadNibNamed:@"Preferences" owner:self])
+//    {
+//        NSLog(@"Warning! Could not load myNib file.\n");
+//    }	
 }
 
 - (NSString *) typeForContentsOfURL:(NSURL *) inAbsoluteURL error:(NSError **) outError {

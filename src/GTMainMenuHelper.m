@@ -39,7 +39,7 @@
 	NSMenu * mm = [[NSApplication sharedApplication] mainMenu];
 	NSMenu * gm = [[mm itemAtIndex:0] submenu];
 	[gm setAutoenablesItems:false];
-	NSMenuItem * reg = [gm itemAtIndex:2];
+	NSMenuItem * reg = [gm itemAtIndex:4];
 	[reg setEnabled:false];
 }
 
@@ -56,6 +56,12 @@
 	actionsMenu = [[mainMenu itemWithTag:4] submenu];
 	statusMenu = [[mainMenu itemWithTag:5] submenu];
 	repoMenu = [[mainMenu itemWithTag:6] submenu];
+	
+	//	NSUserDefaults * ldefaults = [gd defaults];
+	//  NSString * path = [[NSUserDefaults standardUserDefaults] stringForKey:@"GTCompareApplication"];
+
+	[[actionsMenu itemWithTag:5] setEnabled:true];
+
 }
 
 - (void) updateAutoEnableItems {
